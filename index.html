@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Epidemiologi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Dashboard Epidemiologi</h1>
+      <p>Monitoring data kesehatan secara sederhana</p>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Cetak</button>
+  </header>
+
+  <nav class="nav">
+    <a href="#beranda">Beranda</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#data">Data Penyakit</a>
+    <a href="#laporan">Laporan</a>
+  </nav>
+
+  <main>
+    <section id="beranda" class="hero">
+      <div>
+        <span class="badge">Sistem Informasi Epidemiologi</span>
+        <h2>Monitoring Kasus Kesehatan</h2>
+        <p>Website sederhana untuk melihat ringkasan kasus berdasarkan penyakit, umur, dan jenis kelamin.</p>
+        <a class="primary-btn" href="#dashboard">Lihat Dashboard</a>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <div class="section-title">
+        <div>
+          <h2>Dashboard</h2>
+          <p>Ringkasan data contoh yang dapat Anda ubah.</p>
+        </div>
+        <select id="diseaseFilter" aria-label="Filter penyakit">
+          <option value="Semua">Semua penyakit</option>
+        </select>
+      </div>
+
+      <div class="cards">
+        <div class="card"><span>Total Kasus</span><strong id="totalCases">0</strong></div>
+        <div class="card"><span>Penyakit Terbanyak</span><strong id="topDisease">-</strong></div>
+        <div class="card"><span>Laki-laki</span><strong id="maleCases">0</strong></div>
+        <div class="card"><span>Perempuan</span><strong id="femaleCases">0</strong></div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Kasus per Penyakit</h3>
+          <div id="diseaseChart" class="bar-chart"></div>
+        </div>
+        <div class="panel">
+          <h3>Kasus per Kelompok Umur</h3>
+          <div id="ageChart" class="bar-chart"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="section-title">
+        <div>
+          <h2>Data Penyakit</h2>
+          <p>Data contoh dapat diedit langsung pada <code>script.js</code>.</p>
+        </div>
+        <input id="searchInput" type="search" placeholder="Cari penyakit...">
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Penyakit</th>
+              <th>Kasus</th>
+              <th>Laki-laki</th>
+              <th>Perempuan</th>
+            </tr>
+          </thead>
+          <tbody id="diseaseTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="laporan">
+      <div class="report">
+        <h2>Laporan Singkat</h2>
+        <p id="reportText">Data akan dirangkum di sini.</p>
+        <button class="primary-btn" onclick="window.print()">Cetak Laporan</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Dashboard Epidemiologi • Website HTML, CSS & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
